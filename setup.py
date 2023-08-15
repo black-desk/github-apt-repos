@@ -31,6 +31,7 @@ setup(name='github-apt-repos',
       install_requires=[
           'python-gnupg',
           'github3.py',
+          'python-apt @ https://salsa.debian.org/apt-team/python-apt/-/archive/2.5.3/python-apt-2.5.3.zip#egg=python-apt-2.5.3'
       ],
       entry_points={
           'console_scripts': [

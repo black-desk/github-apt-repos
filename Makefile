@@ -4,7 +4,7 @@
 build: .venv/bin/github-apt-repos
 
 .venv:
-	virtualenv .
+	virtualenv .venv
 
 .venv/bin/github-apt-repos: .venv
 	.venv/bin/pip install -U --upgrade-strategy=eager -e .

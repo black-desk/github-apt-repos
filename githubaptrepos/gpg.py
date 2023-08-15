@@ -39,6 +39,8 @@ def set_up_gpg_key(args, apt_repo=None, gpg=gpg):
     """
     gpg_pub_key_path = args.gpg_pub_key
     gpg_user_id = args.gpg_user_id
+    gpg_pub_key = None
+
     if gpg_pub_key_path is None:
         if gpg_user_id is None and apt_repo is not None:
             gpg_user_id = (

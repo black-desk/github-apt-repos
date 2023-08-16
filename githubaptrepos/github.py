@@ -254,7 +254,10 @@ def release_apt_repo(
         path = os.path.join(dist_arch_dir, asset_name)
         content_type, encoding = mimetypes.guess_type(asset_name)
         if content_type is None:
-            content_type, encoding = mimetypes.guess_type(
+            if asset_name.endswith(".deb"):
+                content_type = "application/vnd.debian.binary-package"
+            else:
+                content_type, encoding = mimetypes.guess_type(
                 asset_name + APT_EXTENSIONS.get(asset_name, '.txt'))
 
         logger.info(

@@ -10,6 +10,9 @@ import shutil
 import logging
 
 from . import utils
+from . import gpg
+from . import github
+from . import repo
 
 logger = logging.getLogger('github-apt-repos')
 
@@ -18,9 +21,6 @@ def main():
     """
     Download all release deb assets, build and upload APT repos.
     """
-    from . import gpg
-    from . import github
-    from . import repo
 
     logging.basicConfig(level=logging.INFO)
 

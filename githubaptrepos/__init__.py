@@ -95,7 +95,7 @@ def main():
             for dist_arch_dir in dist_arch_dirs:
                 github.release_apt_repo(
                     apt_repo, apt_dir, dist_arch_dir,
-                    tag_prefix=args.gh_release_prefix or tag,
+                    tag_prefix=args.gh_release_prefix,
                     gpg_pub_key_basename=gpg_pub_key_basename,
                     delete_existing=args.gh_delete_existing)
 

@@ -91,13 +91,13 @@ def main():
         for dist_arch_dir in dist_arch_dirs:
             gpg.make_apt_repo(gpg_user_id, gpg_pub_key_src, dist_arch_dir)
 
-        # if apt_repo is not None:
-        #     for dist_arch_dir in dist_arch_dirs:
-        #         github.release_apt_repo(
-        #             apt_repo, apt_dir, dist_arch_dir,
-        #             tag_prefix=args.gh_release_prefix or tag,
-        #             gpg_pub_key_basename=gpg_pub_key_basename,
-        #             delete_existing=args.gh_delete_existing)
+        if apt_repo is not None:
+            for dist_arch_dir in dist_arch_dirs:
+                github.release_apt_repo(
+                    apt_repo, apt_dir, dist_arch_dir,
+                    tag_prefix=args.gh_release_prefix or tag,
+                    gpg_pub_key_basename=gpg_pub_key_basename,
+                    delete_existing=args.gh_delete_existing)
 
     finally:
         if deb_dir is not None and args.deb_dir is None:

@@ -255,7 +255,7 @@ def release_apt_repo(
         content_type, encoding = mimetypes.guess_type(asset_name)
         if content_type is None:
             if asset_name.endswith(".deb"):
-                content_type = "application/vnd.debian.binary-package"
+                content_type = "application/octet-stream"
             else:
                 content_type, encoding = mimetypes.guess_type(
                 asset_name + APT_EXTENSIONS.get(asset_name, '.txt'))
